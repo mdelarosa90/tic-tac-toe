@@ -1,6 +1,14 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    background: rgba(147,206,222,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
   }
   
   ol, ul {
@@ -12,24 +20,55 @@ body {
     content: "";
     display: table;
   }
+
+  .margin {
+    margin-bottom: 50px;
+  }
   
   .status {
     margin-bottom: 10px;
+    font-size: 50px;
+    text-align: center;
+    color: orange;
+    -webkit-text-stroke: 1px black;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
   }
   
+  .square-parent {
+    margin-left: 300px;
+  }
+
   .square {
-    background: #fff;
-    border: 1px solid #999;
+    background: rgb(12, 12, 12);
+    border: 10px solid #999;
     float: left;
-    font-size: 24px;
+    font-size: 80px;
     font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
+    line-height: 200px;
+    height: 200px;
+    margin-right: -10px;
+    margin-top: -10px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 200px;
+    color: #fff;
+    -webkit-animation: square 1s ease-in-out infinite alternate;
+    -moz-animation: square 1s ease-in-out infinite alternate;
+    animation: square 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes square {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #002ae6, 0 0 40px #002ae6, 0 0 50px #002ae6, 0 0 60px #002ae6, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #4d77ff, 0 0 40px #4d77ff, 0 0 50px #4d77ff, 0 0 60px #4d77ff, 0 0 70px #4d77ff, 0 0 80px #4d77ff;
+    }
   }
   
   .square:focus {

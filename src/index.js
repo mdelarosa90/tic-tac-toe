@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './Header/Header';
 import './index.css';
 
 function Square(props) {
     return (
+      <div className="square-parent">
         <button className="square" onClick={props.onClick}>
             {props.value}
         </button>
+      </div>
     );
 }
 
@@ -37,12 +40,15 @@ class Board extends React.Component {
   }
 
   render() {
+    
     const winner = calculateWinner(this.state.squares);
     let status
-    status = winner ? 'Winner:' + winner : 'Next Player' + (this.state.xIsNext ? 'X' : 'O');
+    status = winner ? 'Winner: ' + winner : 'Next Player ' + (this.state.xIsNext ? 'X' : 'O');
     return (
       <div>
+        <Header></Header>
         <div className="status">{status}</div>
+        <div className="margin"></div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
