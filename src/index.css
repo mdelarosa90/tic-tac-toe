@@ -60,6 +60,7 @@ body {
     -webkit-animation: square 1s ease-in-out infinite alternate;
     -moz-animation: square 1s ease-in-out infinite alternate;
     animation: square 1s ease-in-out infinite alternate;
+    cursor: pointer;
   }
 
   @keyframes square {
@@ -87,4 +88,38 @@ body {
   .game-info {
     margin-left: 20px;
   }
-  
+
+  .restart-game {
+    margin-top: 30px;
+    width: 600px;
+    display: block;
+    text-align: center;
+    background-color: #000;
+    border-radius: 20px;
+    color: tan;
+    font-size: 2.5rem;
+    margin-left: 300px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 1s;
+    box-shadow: 6px 6px 0 rgb(97, 79, 79);
+  }
+
+  .restart-game:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638;
+    animation: color_anim 1s infinite 0.2s;
+  }
+
+  @keyframes color_anim {
+    0% {
+        background: #000;
+    }
+    50% {
+        background: rgb(150, 135, 95);
+        color: darkred;
+    }
+    100% {
+        background: #000;
+    }
+}

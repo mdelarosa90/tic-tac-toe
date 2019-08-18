@@ -31,6 +31,7 @@ class Board extends React.Component {
             xIsNext: !this.state.xIsNext,
         });
     }
+    
   renderSquare(i) {
     return (
         <Square value={this.state.squares[i]} 
@@ -39,11 +40,22 @@ class Board extends React.Component {
     );
   }
 
+  restartGame = () => {
+    const history = {
+      squares: Array(9).fill(null),
+      xIsNext: true
+    };
+    this.setState({
+      squares: history.squares,
+      xIsNext: history.xIsNext,
+    });
+  }
+
   render() {
     
     const winner = calculateWinner(this.state.squares);
     let status
-    status = winner ? 'Winner: ' + winner : 'Next Player ' + (this.state.xIsNext ? 'X' : 'O');
+    status = winner ? 'Winner: ' + winner : 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
     return (
       <div>
         <Header></Header>
@@ -63,6 +75,13 @@ class Board extends React.Component {
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
+        </div>
+        <div>
+          <button className="restart-game" onClick={this.restartGame}>
+            <span>          
+              Reiniciar Juego
+            </span>
+          </button>
         </div>
       </div>
     );
